@@ -2,6 +2,224 @@
 
 ---
 
-<nav>
-	<h2>Navbar</h2>
+<nav class="wrapper panel-shadow--light">
+	<div class="navbar">
+		<a class="home" href="/">
+			<div class="logo">
+				TEMP [HOME]
+			</div>
+		</a>
+
+		<div class="menu_container">
+			<div class="dropdown_button">
+				<i class="fas fa-bars bars"></i>
+				<!-- <i class="fas fa-bars bars"/> -->
+			</div>
+
+			<div class="menu">
+				<a href="/services" class="menu_item links">Services</a>
+				<a href="/meet-the-team" class="menu_item links">Meet The Team</a>
+				<a href="/how-to-order" class="menu_item links">How To Order</a>
+				<a href="/faq" class="menu_item links">FAQ</a>
+				<a href="/order" class="menu_item links">Order</a>
+				<a href="#more" class="menu_item links">More...</a>
+				<a href="/newsletter/subscribe"
+					class="newsletter_mobile links">Newsletter</a>
+			</div>
+		</div>
+		<a href="/newsletter/subscribe">
+			<div tab-index="0" class="newsletter_button btn btn--outline btn--large">
+				Newsletter
+			</div>
+		</a>
+	</div>
 </nav>
+
+<style>
+	.wrapper {
+		background: #ccc;
+		height: var(--navbar-height);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: sticky;
+		top: var(--header-height);
+		z-index: 10;
+	}
+
+	.navbar {
+		
+		display: flex;
+		align-items: center;
+
+		height: var(--navbar-height);
+		max-width: var(--content-width--large);
+		width: 100vw;
+
+		padding: 0;
+		margin: 0 auto;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+
+	.home {
+		justify-self: start;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		margin: 0 0;
+	}
+
+	.logo {
+		height: 100%;
+		width: clamp(200px, 20vw, 240px);
+		padding: 0px 6px;
+	}
+
+	.menu {
+		top: -800px;
+		right: 0;
+
+		opacity: 0;
+		position: absolute;
+		z-index: 2;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		transition: opacity 0.15s ease-out;
+	}
+
+	.dropdown_button {
+		width: var(--navbar-height);
+		height: var(--navbar-height);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		right: 0;
+		position: absolute;
+		top: 0;
+	}
+
+	/* menu icon */
+	.bars {
+		color: var(--text-dark);
+		font-size: 40px;
+		/* width: 40px;
+		height: 40px; */
+		/* display: block; */
+	}
+
+
+	.menu_item {
+		flex-grow: 1;
+	}
+	.links {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: var(--text-dark);
+		font-size: clamp(0.92rem, 1.9vw, 1.2rem);
+	}
+
+	/* links hover, focus */
+	.links:focus,
+	.links:hover,
+	.home:focus,
+	.home:hover {
+		outline: none;
+		background: rgba(255, 255, 255, 1);
+		border-bottom: 4px solid var(--text-dark);
+		transition: all 0.15s ease-out;
+	}
+
+	/* home svg logo background color change on hover */
+	.home:hover path.svg_background,
+	.home:focus path.svg_background {
+		fill: rgba(255, 255, 255, 1);
+		transition: all 0.15s ease-out;
+	}
+
+	.menu_container {
+		flex-grow: 1;
+	}
+
+
+	/* small screens */
+	@media (max-width: 960px) {
+
+		/* activate menu on hover or click */
+		.menu_container:hover>.menu,
+		.menu_container:focus-within .menu,
+		.menu_container .menu:hover {
+			opacity: 1;
+			top: var(--navbar-height);
+			pointer-events: auto;
+			background: rgba(231, 231, 231, 0.95);
+		}
+
+		/* newsletter link on mobile menu */
+		.newsletter_mobile {
+			display: flex;
+		}
+
+		/* non-mobile button */
+		.newsletter_button {
+			display: none;
+		}
+
+		.links {
+			height: 5rem;
+			width: clamp(9rem, 35vw, 12rem);
+		}
+	}
+
+	/* large screens */
+	@media (min-width: 961px) {
+		.menu {
+			opacity: 1;
+			position: relative;
+			z-index: 2;
+			list-style: none;
+
+			top: 0;
+			padding: 0;
+			right: 0;
+
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+
+			transition: opacity 0.15s ease-out;
+		}
+
+		.dropdown_button {
+			display: none;
+		}
+
+		.links {
+			height: var(--navbar-height);
+			width: auto;
+		}
+
+		.newsletter_mobile {
+			display: none;
+		}
+
+		.newsletter_button {
+			justify-self: end;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: 4px;
+			margin: 0 6px;
+			width: clamp(130px, 13.53vw, 205px);
+		}
+	}
+</style>
