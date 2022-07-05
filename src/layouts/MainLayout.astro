@@ -388,4 +388,25 @@ const { title } = Astro.props as Props;
 	border-radius: var(--card-border-radius);
 }
 
+
+
+
+/* Link Styles */
+:global(.dark-link) {
+	color: var(--footer-background-color);
+	text-decoration: none;
+	cursor: pointer;
+	transition: transform 0.1s ease-in-out;
+}
+
+:global(.dark-link:hover) {
+	transform: scale(1.05);
+}
+
+:global(.dark-link.underline) {
+	cursor: pointer;
+	display: inline;
+	text-decoration: underline;
+}
+
 </style>
