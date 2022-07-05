@@ -110,7 +110,10 @@ const { title } = Astro.props as Props;
 		--btn-error-hover: rgb(255, 192, 192);
 
 
+		/* card */
+		--card-border-radius: 4px;
 
+		--subscribe-component-bg: #646464;
 	}
 
 	* {
@@ -379,90 +382,10 @@ const { title } = Astro.props as Props;
 	background-color: var(--btn-error-hover);
 }
 
+/* Card styles */
 
-
-/* 
-:global(.btn) {
-	padding: 8px 20px;
-	border-radius: 4px;
-	outline: none;
-	border: none;
-	cursor: pointer;
-	width: 220px;
+:global(.card) {
+	border-radius: var(--card-border-radius);
 }
 
-:global(.btn--primary) {
-	background-color: var(--primary);
-	color: #242424;
-	border: 1px solid var(--primary);
-}
-
-:global(.btn--primary--dark) {
-	background-color: var(--primary);
-	color: var(--secondary);
-	border: 1px solid var(--secondary);
-}
-
-:global(.btn--outline) {
-	background-color: rgba(0, 0, 0, 0.5);
-	color: #fff;
-	padding: 8px 20px;
-	border: 1px solid var(--primary);
-	transition: var(--transition);
-}
-
-:global(.btn--outline--secondary) {
-	background-color: transparent;
-	color: var(--sencondary);
-	padding: 8px 20px;
-	border: 1px solid var(--secondary);
-	transition: var(--transition);
-}
-
-:global(.btn--medium) {
-	padding: 8px 20px;
-	font-size: 20px;
-}
-
-:global(.btn--large) {
-	padding: 12px 26px;
-	font-size: 20px;
-}
-
-:global(.btn--medium:hover),
-:global(.btn--large:hover) {
-	background: #fff;
-	color: #242424;
-	transition: var(--transition);
-	border: 1px solid #242424;
-}
-
-:global(.btn--pending) {
-	background-color: rgb(255, 207, 48);
-	color: #242424;
-}
-:global(.btn--complete) {
-	background-color: rgb(48, 192, 32);
-	color: #242424;
-}
-:global(.btn--error) {
-	background-color: rgb(196, 96, 72);
-	color: #242424;
-}
-
-:global(.btn--pending:hover) {
-	background-color: rgb(255, 255, 207);
-	color: #242424;
-	transition: var(--transition);
-}
-:global(.btn--complete:hover) {
-	background-color: rgb(192, 255, 192);
-	color: #242424;
-	transition: var(--transition);
-}
-:global(.btn--error:hover) {
-	background-color: rgb(255, 192, 192);
-	color: #242424;
-	transition: var(--transition);
-} */
 </style>
